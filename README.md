@@ -24,60 +24,64 @@
 
 之后 fork 本仓库到自己的 GitHub 账号，之后打开仓库的 Settings，在仓库设置界面在打开 Secrets 选项：
 
-![Screen Shot 2021-01-19 at 19.06.10](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.06.10.png)
+![Github Repo Secrets Settings](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.06.10.png)
 
 之后新建一个 secret，Name 为 CONFIG，Value 就是你编辑的包含你的学号密码的 yaml 文件内容全部复制进去即可：
 
-![Screen Shot 2021-01-19 at 19.08.02](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.08.02.png)
+![New Github Repo Secret](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.08.02.png)
 
 保存即可，之后转到仓库的 Actions 选项卡：
 
-![Screen Shot 2021-01-19 at 19.09.06](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.09.06.png)
+![Enable Github Actions workflow](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.09.06.png)
 
-Enable 本仓库已经配置好的 GitHub Actions workflow，之后点击 heal_sign 打开配置选项：![Screen Shot 2021-01-19 at 19.10.46](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.10.46.png)
+Enable 本仓库已经配置好的 GitHub Actions workflow，之后点击 checkin 打开配置选项：
+
+![Enable checkin workflow](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-21%20at%2015.11.44.png)
 
  Enable workflow，之后得到下面的界面：
 
-![Screen Shot 2021-01-19 at 19.11.30](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-19%20at%2019.11.30.png)
+![Checkin workflow page](https://cdn.jsdelivr.net/gh/viewv/Pico@master/uPic/Screen%20Shot%202021-01-21%20at%2015.12.33.png)
 
 你现在可以选择 Run workflow 手动触发运行，本仓库也配置了每天的自动运行，你可以打开 GitHub Actions 的运行结果提示，这样就可以简单的实现每天的打卡任务。
 
 > ⚠️ 注意
 >
 > 最近我们发现 GitHub Actions workflow 有延时问题， 有可能您的实际运行时间与设置的不同。
+>
+> 又由于 GitHub 可能的设计问题，您有可能需要先手动运行一次打卡 workflow 才可以激活定时运行。
 
 <details>
-<summary>关于repo_sync.yml的使用说明</summary>
+<summary>关于 repo_sync.yml 的使用说明</summary>
 
-这个文件创建了一个定时自动同步源仓库内所有代码的github actions。
+这个文件创建了一个定时自动同步源仓库内所有代码的 Github Actions workflow。
 
 > ⚠️ 注意
 >
-> 该github actions执行后会自动覆盖原仓库内的所有代码，并更新为源仓库的代码，所有自定义的修改将不会得到保留（一般来说，也没什么需要自定义的，实在是需要自定义，可以手动执行该github actions之后，将其设置为disable）。
+> 该 workflow 执行后会自动覆盖原仓库内的所有代码，并更新为源仓库的代码，所有自定义的修改将不会得到保留（一般来说，也没什么需要自定义的，实在是需要自定义，可以手动执行该 workflow 之后，将其设置为 disable ）。
 
-在fork了代码之后，首先需要去申请一个GitHub Personal Access Token，该Token让此github actions拥有了更改指定仓库代码的权限。具体操作如下：
+在 fork 了代码之后，首先需要去申请一个 GitHub Personal Access Token，该 Token 让此 workflow 拥有了更改指定仓库代码的权限。具体操作如下：
 
-先选择这个settings
+先选择账户 Settings
 
-![image-20210121121329851](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121329851.png)
+![Github account Settings](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121329851.png)
 
-然后选择Developer Settings
+然后选择 Developer Settings
 
-![image-20210121121525838](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121525838.png)
+![Github Developer Settings](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121525838.png)
 
-之后再选择Personal access tokens 点击里面的Generate new token
+之后再选择 Personal access tokens 点击里面的 Generate new token
 
-![image-20210121121640260](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121640260.png)
+![Generate new token](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121640260.png)
 
 之后先随便取个好记的名字，然后勾选前两项
 
-![image-20210121121747207](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121747207.png)
+![New personal access token](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121747207.png)
 
-最后点击下面的Generate token即可，这样就能获得一串类似这样的字符，赶紧复制下来，它只会显示这一次
+最后点击下面的 Generate token 即可，这样就能获得一串类似这样的字符，赶紧复制下来，它只会显示这一次
 
-![image-20210121121953685](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121953685.png)
+![Personal token info](https://cdn.jsdelivr.net/gh/nekomiao123/pic/img/image-20210121121953685.png)
 
-然后去新建一个 secrets（跟上面建立secrets的教程一样）
+然后去新建一个 secret（跟上面建立 secret 的流程一样）
 
 Name 是 PAT
 
@@ -85,23 +89,27 @@ Value 是刚才你复制的这一串字符
 
 </details>
 
-到这里，该github actions就可以使用了。
+到这里，该 Github Actions workflow 就可以使用了，可以实现每日自动打卡，如果你也开启了 repo_sync workflow 那么也将定时自动同步本仓库以保持代码更新。
 
 ### 本地运行
 
-在本地安装好环境后，运行：
+在本地安装好环境后，下载或者 clone 本仓库后，到项目文件夹下运行如下命令安装 Python 所需依赖：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-安装 python 所需依赖之后，需要把configexample.yml文件改名为config.yml，然后根据文件里面的内容指示填入账号和密码。
+安装好本程序所需依赖之后，需要把 configexample.yml 文件改名为 config.yml，然后根据文件里面的内容指示填入账号和密码。
 
-然后就可以运行程序进行打卡了。
+之后运行如下命令运行 sduhealth.py 便会运行程序进行打卡。
+
+```bash
+python sduhealth.py
+```
 
 ## 程序分析
 
-想知道这个程序如何工作的，出现了 bug 想修改代码？欢迎阅读 [山东大学健康打卡系统分析](https://github.com/viewv/sduhealth/blob/main/analysis.md) ！
+想知道这个程序如何工作的，出现了 bug 想修改代码？欢迎阅读 [山东大学健康打卡系统分析](https://github.com/viewv/sduhealth/blob/main/doc/analysis.md) ！
 
 ## Contributors ✨
 

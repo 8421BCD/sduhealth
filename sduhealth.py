@@ -304,7 +304,7 @@ def read():
 def main():
     users, passwords = read()
     for i in range(0, len(users)):
-        print("sign for ", users[i][-3:])
+        print("Sign in for", users[i][-3:])
 
         user = users[i]
         password = passwords[i]
@@ -324,7 +324,9 @@ def main():
             print("Checkin Error")
             raise RuntimeError("Checkin Error")
 
-        print("Checkin Successful")
+        if not sdu.whether_signed:
+            print("Checkin Successful")
+            
         sdu.health_logout()
         print("Logout Successful")
 
