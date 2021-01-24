@@ -2,7 +2,7 @@ name: checkin
 
 on:
   schedule:
-    - cron: "0 0,8 * * *"
+    - cron: "3 * * * *"
   workflow_dispatch:
   push:
     branches:
