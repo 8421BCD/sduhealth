@@ -1,6 +1,6 @@
 # SDUHealth
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 山东大学学生每日健康状况填报自动打卡。
@@ -106,6 +106,10 @@ pip install -r requirements.txt
 python sduhealth.py
 ```
 
+## 图形界面版本
+
+- 见 [gui 分支](https://github.com/viewv/sduhealth/tree/gui)
+
 ## 程序分析
 
 想知道这个程序如何工作的，出现了 bug 想修改代码？欢迎阅读 [山东大学健康打卡系统分析](https://github.com/viewv/sduhealth/blob/main/doc/analysis.md) ！
@@ -123,6 +127,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://nekokiku.cn/"><img src="https://avatars3.githubusercontent.com/u/34064940?v=4?s=100" width="100px;" alt=""/><br /><sub><b>menma</b></sub></a><br /><a href="https://github.com/viewv/sduhealth/commits?author=nekomiao123" title="Code">💻</a></td>
     <td align="center"><a href="https://www.macrohard.cn"><img src="https://avatars.githubusercontent.com/u/44798266?v=4?s=100" width="100px;" alt=""/><br /><sub><b>2U</b></sub></a><br /><a href="https://github.com/viewv/sduhealth/commits?author=Singularity0909" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ryuujo1573"><img src="https://avatars.githubusercontent.com/u/16525512?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ryuujo Zhang</b></sub></a><br /><a href="https://github.com/viewv/sduhealth/commits?author=ryuujo1573" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.superzhaoyang.top"><img src="https://avatars.githubusercontent.com/u/49988452?v=4?s=100" width="100px;" alt=""/><br /><sub><b>superzhaoyang</b></sub></a><br /><a href="https://github.com/viewv/sduhealth/commits?author=superzhaoyang" title="Code">💻</a></td>
   </tr>
 </table>
 
